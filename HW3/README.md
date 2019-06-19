@@ -1,14 +1,11 @@
 # Homework 3 - Robot localization
 The goal of this homework is to get the estimate position of the robot in the space. The basic assumption we have to make is that we have a complete knowledge of the environment in which the robot will move. 
 
-### Homework 2 needed
-This homework is based on the code written in Homework 2.
-
 ### To run the exercise
 Note: a new terminal tab is required for each point in this list. Always remember to write the command `source devel/setup.bash` (inside the labiagi_ws directory) after opening a new tab.
 - Start roscore with `roscore`.
 - Run gmapping with `rosrun gmapping slam_gmapping scan:=base_scan`
-- Start Stage. `roscd stage_ros`, `cd world` and `rosrun stage_ros stageros willow-erratic.world`. Now, move the robot in the map for a while. It will get the data from the laser scanner and will create a map of the space. The more you go around with the robot, the bigger and more precise the map will be. Note: to move the robot in the map you can use a joystick or the keyboard arrows. In both cases you will need to run the appropriete node in a new terminal tab (ex. `rosrun srrg_joystick_teleop joy_teleop_node`.
+- Start Stage. `roscd stage_ros`, `cd world` and `rosrun stage_ros stageros willow-erratic.world`. Now, move the robot in the map for a while. It will get the data from the laser scanner and will create a map of the space. The more you go around with the robot, the bigger and more precise the map will be. Note: to move the robot in the map you can use a joystick or the keyboard arrows. In both cases you will need to run the appropriete node in a new terminal tab (ex. `rosrun srrg_joystick_teleop joy_teleop_node`).
 - `rosrun map_server map_saver -f [mapName]` to save the map. [mapName] is the filename of the map.
 - `rosrun map_server map_server [mapName].yaml` to start a server with the map.
 - `rosrun tf static_transform_publisher 0 0 0 0 0 0 /odom /map 10`
