@@ -1,0 +1,8 @@
+add_executable(bartolo_node bartolo_node.cpp)
+add_executable(bartolo_gicp_node bartolo_gicp_node.cpp)
+add_executable(bartolo_rosbag_node bartolo_rosbag_node.cpp)
+add_executable(bartolo_visualizer_node bartolo_visualizer.cpp)
+target_link_libraries(bartolo_node bartolo_library ${catkin_LIBRARIES})
+target_link_libraries(bartolo_gicp_node bartolo_library ${catkin_LIBRARIES})
+target_link_libraries(bartolo_rosbag_node bartolo_library ${catkin_LIBRARIES})
+target_link_libraries(bartolo_visualizer_node bartolo_library ${catkin_LIBRARIES})
